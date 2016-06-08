@@ -35,6 +35,7 @@ MM.clickOn = function(text, container) {
     return MM.clickOnElement(node);
 };
 
+
 /**
  * Click on a element.
  *
