@@ -94,7 +94,7 @@ describe('User can change App settings', function() {
         }).then(function () {
             return MM.clickOn('About');
         }).then(function () {
-            expect(MM.getView().getText()).toMatch('Moodle Mobile 3.1.0');
+            expect(MM.getView().getText()).toMatch('Moodle Mobile');
             return MM.goBack();
         }).then(function(){
             done();
