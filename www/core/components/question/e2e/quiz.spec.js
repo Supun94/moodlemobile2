@@ -15,6 +15,7 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Grammar help with your essays');
         }).then(function() {
             expect(MM.getNavBar().getText()).toMatch('Grammar help with your essays');
+        }).then(function() {
             done();
         });
     });
@@ -30,6 +31,7 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Grammar help with your essays');
         }).then(function() {
             return MM.clickOn('Attempt quiz now');
+        }).then(function() {
             done();
         });
     });
@@ -47,6 +49,7 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Continue the last attempt');
         }).then(function(){
             return element(by.xpath('/html/body/div[4]/div/div[3]/button')).click();
+        }).then(function() {
             done();
         });
     });
@@ -67,6 +70,7 @@ describe('User can attempt questions', function() {
         }).then(function () {
             return MM.clickOn('OK');
             expect(MM.getView().getText()).toMatch('Please select an answer.');
+        }).then(function() {
             done();
         });
     });
@@ -90,6 +94,7 @@ describe('User can attempt questions', function() {
             return element(by.xpath('//*[@id="mma-mod_quiz-question-1"]/mm-question/div[1]/section/label[3]/label/div/i')).click();
         }).then(function () {
             return MM.clickOn('Check');
+        }).then(function() {
             done();
         });
     });
@@ -105,6 +110,7 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Grammar help with your essays');
         }).then(function() {
             return element(by.xpath('/html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-bar/div[2]/ion-header-bar/div[3]/span/a')).click();
+        }).then(function() {
             done();
         });
     });
