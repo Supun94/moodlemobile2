@@ -20,7 +20,7 @@ describe('User can attempt questions', function() {
         });
     });
 
-    it('Attept Questions', function (done) {
+    it('Attempt Questions', function (done) {
         return MM.loginAsStudent().then(function () {
             return MM.clickOnInSideMenu('My courses');
         }).then(function () {
@@ -46,6 +46,12 @@ describe('User can attempt questions', function() {
         }).then(function () {
             return MM.clickOn('Grammar help with your essays');
         }).then(function() {
+            return MM.clickOn('Attempt quiz now');
+        }).then(function () {
+            return MM.goBack();
+        }).then(function() {
+            expect(MM.getView().getText()).toMatch('Continue the last attempt');
+        }).then(function() {
             return MM.clickOn('Continue the last attempt');
         }).then(function(){
             return element(by.xpath('/html/body/div[4]/div/div[3]/button')).click();
@@ -63,6 +69,10 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Group Projects and Individual tasks');
         }).then(function () {
             return MM.clickOn('Grammar help with your essays');
+        }).then(function() {
+            return MM.clickOn('Attempt quiz now');
+        }).then(function () {
+            return MM.goBack();
         }).then(function() {
             return MM.clickOn('Continue the last attempt');
         }).then(function() {
@@ -84,6 +94,10 @@ describe('User can attempt questions', function() {
             return MM.clickOn('Group Projects and Individual tasks');
         }).then(function () {
             return MM.clickOn('Grammar help with your essays');
+        }).then(function() {
+            return MM.clickOn('Attempt quiz now');
+        }).then(function () {
+            return MM.goBack();
         }).then(function() {
             return MM.clickOn('Continue the last attempt');
         }).then(function() {
@@ -114,5 +128,6 @@ describe('User can attempt questions', function() {
             done();
         });
     });
+
 });
 
